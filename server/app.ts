@@ -2,8 +2,9 @@ import cors from "cors";
 import express from "express";
 import path from "node:path";
 import { getRecipes } from "../shared/data/localData";
-import { searchRecipes } from "../shared/lib/recipeMatching";
-import type { RecipeSearchRequest } from "../shared/types";
+import { searchRecipes, sortSearchResults } from "../shared/lib/recipeMatching";
+import type { RecipeSearchRequest, SearchResult } from "../shared/types";
+import { searchMealDbRecipes } from "./themealdb";
 
 export function createApp() {
   const app = express();
@@ -23,7 +24,7 @@ export function createApp() {
     }
   });
 
-  app.post("/api/recipes/search", (request, response, next) => {
+  app.post("/api/recipes/search", async (request, response, next) => {
     try {
       const body = request.body as Partial<RecipeSearchRequest>;
 
@@ -37,7 +38,21 @@ export function createApp() {
         .map((ingredient) => ingredient.trim())
         .filter(Boolean);
 
-      response.json({ results: searchRecipes(getRecipes(), ingredients) });
+      const sourceWarnings: string[] = [];
+      const localResults = searchRecipes(getRecipes(), ingredients);
+      let mealDbResults: SearchResult[] = [];
+
+      try {
+        mealDbResults = await searchMealDbRecipes(ingredients);
+      } catch (error) {
+        console.warn("TheMealDB search failed", error);
+        sourceWarnings.push("TheMealDB results are unavailable right now.");
+      }
+
+      response.json({
+        results: sortSearchResults([...mealDbResults, ...localResults]),
+        sourceWarnings
+      });
     } catch (error) {
       next(error);
     }

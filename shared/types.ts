@@ -12,6 +12,7 @@ export interface RecipeIngredient {
   name: string;
   quantity: number;
   unit: string;
+  displayMeasure?: string;
   notes?: string;
   pantry?: boolean;
 }
@@ -20,6 +21,7 @@ export interface RecipeSeed {
   id: string;
   name: string;
   description: string;
+  imageUrl?: string;
   servings: number;
   prepTimeMinutes: number;
   cookTimeMinutes: number;
@@ -30,6 +32,12 @@ export interface RecipeSeed {
 
 export interface Recipe extends RecipeSeed {
   nutritionPerServing: NutritionInfo;
+  nutritionUnavailable?: boolean;
+  servingsUnavailable?: boolean;
+  sourceName?: string;
+  sourceUrl?: string;
+  timeUnavailable?: boolean;
+  videoUrl?: string;
 }
 
 export interface IngredientNutritionEntry {
@@ -52,4 +60,5 @@ export interface RecipeSearchRequest {
 
 export interface RecipeSearchResponse {
   results: SearchResult[];
+  sourceWarnings?: string[];
 }

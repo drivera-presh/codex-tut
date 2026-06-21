@@ -1,4 +1,4 @@
-import { Check, Clock3, X } from "lucide-react";
+import { Check, Clock3, ExternalLink, X } from "lucide-react";
 import { useEffect, useId } from "react";
 import type { RecipeIngredient, SearchResult } from "../../shared/types";
 import { NutritionFacts } from "./NutritionFacts";
@@ -9,12 +9,16 @@ interface RecipeDetailModalProps {
 }
 
 function formatIngredient(ingredient: RecipeIngredient) {
-  return `${ingredient.quantity} ${ingredient.unit} ${ingredient.name}${ingredient.notes ? `, ${ingredient.notes}` : ""}`;
+  const measure = ingredient.displayMeasure ?? `${ingredient.quantity} ${ingredient.unit}`;
+  const ingredientText = [measure.trim(), ingredient.name].filter(Boolean).join(" ");
+
+  return `${ingredientText}${ingredient.notes ? `, ${ingredient.notes}` : ""}`;
 }
 
 export function RecipeDetailModal({ result, onClose }: RecipeDetailModalProps) {
   const titleId = useId();
   const { recipe, matchedIngredients, missingIngredients } = result;
+  const servingsLabel = recipe.servingsUnavailable ? "Servings not listed" : `${recipe.servings} servings`;
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -59,16 +63,33 @@ export function RecipeDetailModal({ result, onClose }: RecipeDetailModalProps) {
           </button>
         </div>
 
+        {recipe.imageUrl && <img className="modal-recipe-image" src={recipe.imageUrl} alt={recipe.name} />}
+
         <div className="modal-meta">
-          <span>
-            <Clock3 size={16} aria-hidden="true" />
-            Prep {recipe.prepTimeMinutes} min
-          </span>
-          <span>
-            <Clock3 size={16} aria-hidden="true" />
-            Cook {recipe.cookTimeMinutes} min
-          </span>
-          <span>{recipe.servings} servings</span>
+          {recipe.timeUnavailable ? (
+            <span>
+              <Clock3 size={16} aria-hidden="true" />
+              Time not listed
+            </span>
+          ) : (
+            <>
+              <span>
+                <Clock3 size={16} aria-hidden="true" />
+                Prep {recipe.prepTimeMinutes} min
+              </span>
+              <span>
+                <Clock3 size={16} aria-hidden="true" />
+                Cook {recipe.cookTimeMinutes} min
+              </span>
+            </>
+          )}
+          <span>{servingsLabel}</span>
+          {recipe.sourceUrl && (
+            <a className="source-link" href={recipe.sourceUrl} target="_blank" rel="noreferrer">
+              <ExternalLink size={16} aria-hidden="true" />
+              Source
+            </a>
+          )}
         </div>
 
         <div className="modal-layout">
@@ -99,7 +120,16 @@ export function RecipeDetailModal({ result, onClose }: RecipeDetailModalProps) {
               <h3 id="missing-title">Missing Ingredients</h3>
               <p>{missingIngredients.length ? missingIngredients.join(", ") : "No essential ingredients missing."}</p>
             </section>
-            <NutritionFacts nutrition={recipe.nutritionPerServing} />
+            {recipe.nutritionUnavailable ? (
+              <section className="nutrition-panel nutrition-unavailable" aria-labelledby="nutrition-title">
+                <div>
+                  <h3 id="nutrition-title">Nutrition Facts</h3>
+                  <p>Not provided by {recipe.sourceName ?? "this recipe source"}.</p>
+                </div>
+              </section>
+            ) : (
+              <NutritionFacts nutrition={recipe.nutritionPerServing} />
+            )}
           </div>
         </div>
 
