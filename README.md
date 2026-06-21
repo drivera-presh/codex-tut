@@ -7,6 +7,7 @@ A full-stack local app for finding simple recipes from ingredients you already h
 - React + Vite + TypeScript frontend
 - Node.js + Express API
 - Local JSON seed data for recipes and ingredient nutrition estimates
+- TheMealDB recipe search integration
 - Vitest for helper and component tests
 
 ## Run Locally
@@ -30,6 +31,8 @@ Search payload:
   "ingredients": ["chicken", "rice", "onion"]
 }
 ```
+
+The search endpoint combines local recipes with TheMealDB matches. TheMealDB uses its free v1 API key `1` by default; set `THEMEALDB_API_KEY` to use your own supporter key.
 
 ## Tests
 

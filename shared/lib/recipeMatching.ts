@@ -31,6 +31,22 @@ export function scoreRecipe(recipe: Recipe, userIngredients: string[]): SearchRe
   };
 }
 
+export function sortSearchResults(results: SearchResult[]) {
+  return [...results].sort((a, b) => {
+    if (a.missingIngredients.length !== b.missingIngredients.length) {
+      return a.missingIngredients.length - b.missingIngredients.length;
+    }
+
+    if (a.matchScore !== b.matchScore) {
+      return b.matchScore - a.matchScore;
+    }
+
+    const aTotalTime = a.recipe.prepTimeMinutes + a.recipe.cookTimeMinutes;
+    const bTotalTime = b.recipe.prepTimeMinutes + b.recipe.cookTimeMinutes;
+    return aTotalTime - bTotalTime;
+  });
+}
+
 export function searchRecipes(recipes: Recipe[], userIngredients: string[]) {
   const normalizedUserIngredients = normalizeIngredientList(userIngredients);
 
@@ -38,20 +54,7 @@ export function searchRecipes(recipes: Recipe[], userIngredients: string[]) {
     return [];
   }
 
-  return recipes
+  return sortSearchResults(recipes
     .map((recipe) => scoreRecipe(recipe, normalizedUserIngredients))
-    .filter((result) => result.matchedIngredients.length > 0)
-    .sort((a, b) => {
-      if (a.missingIngredients.length !== b.missingIngredients.length) {
-        return a.missingIngredients.length - b.missingIngredients.length;
-      }
-
-      if (a.matchScore !== b.matchScore) {
-        return b.matchScore - a.matchScore;
-      }
-
-      const aTotalTime = a.recipe.prepTimeMinutes + a.recipe.cookTimeMinutes;
-      const bTotalTime = b.recipe.prepTimeMinutes + b.recipe.cookTimeMinutes;
-      return aTotalTime - bTotalTime;
-    });
+    .filter((result) => result.matchedIngredients.length > 0));
 }

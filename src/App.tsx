@@ -3,9 +3,7 @@ import { useMemo, useState } from "react";
 import { IngredientForm } from "./components/IngredientForm";
 import { RecipeCard } from "./components/RecipeCard";
 import { RecipeDetailModal } from "./components/RecipeDetailModal";
-import { getLocalRecipes } from "./data/localRecipes";
-import { searchRecipes } from "../shared/lib/recipeMatching";
-import type { SearchResult } from "../shared/types";
+import type { RecipeSearchResponse, SearchResult } from "../shared/types";
 
 type SearchStatus = "idle" | "loading" | "success" | "error";
 
@@ -14,6 +12,23 @@ function parseIngredientText(value: string) {
     .split(",")
     .map((ingredient) => ingredient.trim())
     .filter(Boolean);
+}
+
+async function searchRecipesByIngredients(ingredients: string[]) {
+  const response = await fetch("/api/recipes/search", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ ingredients })
+  });
+
+  if (!response.ok) {
+    throw new Error("Recipe search request failed.");
+  }
+
+  const payload = (await response.json()) as RecipeSearchResponse;
+  return payload.results;
 }
 
 export default function App() {
@@ -40,7 +55,7 @@ export default function App() {
     setMessage("");
 
     try {
-      const searchResults = searchRecipes(getLocalRecipes(), ingredients);
+      const searchResults = await searchRecipesByIngredients(ingredients);
       setResults(searchResults);
       setStatus("success");
       setMessage(

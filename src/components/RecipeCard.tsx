@@ -13,23 +13,33 @@ function formatTime(prepTimeMinutes: number, cookTimeMinutes: number) {
 
 export function RecipeCard({ result, onViewDetails }: RecipeCardProps) {
   const { recipe, matchScore, missingIngredients } = result;
+  const timeLabel = recipe.timeUnavailable
+    ? "time n/a"
+    : formatTime(recipe.prepTimeMinutes, recipe.cookTimeMinutes);
+  const servingsLabel = recipe.servingsUnavailable ? "servings n/a" : `${recipe.servings} servings`;
+  const nutritionLabel = recipe.nutritionUnavailable
+    ? "nutrition n/a"
+    : `${recipe.nutritionPerServing.calories} cal`;
 
   return (
     <article className="recipe-card">
+      {recipe.imageUrl && (
+        <img className="recipe-thumb" src={recipe.imageUrl} alt={recipe.name} loading="lazy" />
+      )}
       <div className="card-topline">
         <span className="match-pill">{matchScore}% match</span>
-        <span>{recipe.servings} servings</span>
+        <span>{servingsLabel}</span>
       </div>
       <h3>{recipe.name}</h3>
       <p>{recipe.description}</p>
       <div className="stat-row" aria-label={`${recipe.name} summary`}>
         <span>
           <Flame size={16} aria-hidden="true" />
-          {recipe.nutritionPerServing.calories} cal
+          {nutritionLabel}
         </span>
         <span>
           <Clock3 size={16} aria-hidden="true" />
-          {formatTime(recipe.prepTimeMinutes, recipe.cookTimeMinutes)}
+          {timeLabel}
         </span>
       </div>
       <div className="missing-box">
