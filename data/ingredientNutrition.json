@@ -1,0 +1,604 @@
+[
+  {
+    "ingredient": "rice",
+    "aliases": ["cooked rice", "white rice", "brown rice"],
+    "gramsPerUnit": { "cup": 158 },
+    "nutritionPer100Grams": {
+      "calories": 130,
+      "proteinGrams": 2.7,
+      "carbohydrateGrams": 28.2,
+      "fatGrams": 0.3,
+      "fiberGrams": 0.4,
+      "sugarGrams": 0.1,
+      "sodiumMilligrams": 1
+    }
+  },
+  {
+    "ingredient": "chicken",
+    "aliases": ["chicken breast", "cooked chicken"],
+    "gramsPerUnit": {},
+    "nutritionPer100Grams": {
+      "calories": 165,
+      "proteinGrams": 31,
+      "carbohydrateGrams": 0,
+      "fatGrams": 3.6,
+      "fiberGrams": 0,
+      "sugarGrams": 0,
+      "sodiumMilligrams": 74
+    }
+  },
+  {
+    "ingredient": "egg",
+    "aliases": ["eggs"],
+    "gramsPerUnit": { "large": 50 },
+    "nutritionPer100Grams": {
+      "calories": 143,
+      "proteinGrams": 12.6,
+      "carbohydrateGrams": 0.7,
+      "fatGrams": 9.5,
+      "fiberGrams": 0,
+      "sugarGrams": 0.4,
+      "sodiumMilligrams": 142
+    }
+  },
+  {
+    "ingredient": "peas",
+    "gramsPerUnit": { "cup": 145 },
+    "nutritionPer100Grams": {
+      "calories": 84,
+      "proteinGrams": 5.4,
+      "carbohydrateGrams": 15.6,
+      "fatGrams": 0.2,
+      "fiberGrams": 5.5,
+      "sugarGrams": 5.9,
+      "sodiumMilligrams": 5
+    }
+  },
+  {
+    "ingredient": "carrot",
+    "aliases": ["carrots"],
+    "gramsPerUnit": { "cup": 128, "medium": 61 },
+    "nutritionPer100Grams": {
+      "calories": 41,
+      "proteinGrams": 0.9,
+      "carbohydrateGrams": 9.6,
+      "fatGrams": 0.2,
+      "fiberGrams": 2.8,
+      "sugarGrams": 4.7,
+      "sodiumMilligrams": 69
+    }
+  },
+  {
+    "ingredient": "green onion",
+    "aliases": ["scallion", "spring onion"],
+    "gramsPerUnit": { "piece": 15 },
+    "nutritionPer100Grams": {
+      "calories": 32,
+      "proteinGrams": 1.8,
+      "carbohydrateGrams": 7.3,
+      "fatGrams": 0.2,
+      "fiberGrams": 2.6,
+      "sugarGrams": 2.3,
+      "sodiumMilligrams": 16
+    }
+  },
+  {
+    "ingredient": "soy sauce",
+    "aliases": ["tamari"],
+    "gramsPerUnit": { "tablespoon": 16 },
+    "nutritionPer100Grams": {
+      "calories": 53,
+      "proteinGrams": 8.1,
+      "carbohydrateGrams": 4.9,
+      "fatGrams": 0.6,
+      "fiberGrams": 0.8,
+      "sugarGrams": 0.4,
+      "sodiumMilligrams": 5493
+    }
+  },
+  {
+    "ingredient": "sesame oil",
+    "aliases": ["oil"],
+    "gramsPerUnit": { "tablespoon": 13.6, "teaspoon": 4.5 },
+    "nutritionPer100Grams": {
+      "calories": 884,
+      "proteinGrams": 0,
+      "carbohydrateGrams": 0,
+      "fatGrams": 100,
+      "fiberGrams": 0,
+      "sugarGrams": 0,
+      "sodiumMilligrams": 0
+    }
+  },
+  {
+    "ingredient": "broccoli",
+    "aliases": ["broccoli florets"],
+    "gramsPerUnit": { "cup": 91 },
+    "nutritionPer100Grams": {
+      "calories": 35,
+      "proteinGrams": 2.4,
+      "carbohydrateGrams": 7.2,
+      "fatGrams": 0.4,
+      "fiberGrams": 3.3,
+      "sugarGrams": 1.4,
+      "sodiumMilligrams": 41
+    }
+  },
+  {
+    "ingredient": "bell pepper",
+    "aliases": ["capsicum", "sweet pepper"],
+    "gramsPerUnit": { "medium": 119, "cup": 149 },
+    "nutritionPer100Grams": {
+      "calories": 31,
+      "proteinGrams": 1,
+      "carbohydrateGrams": 6,
+      "fatGrams": 0.3,
+      "fiberGrams": 2.1,
+      "sugarGrams": 4.2,
+      "sodiumMilligrams": 4
+    }
+  },
+  {
+    "ingredient": "snap peas",
+    "aliases": ["snow peas", "sugar snap peas"],
+    "gramsPerUnit": { "cup": 98 },
+    "nutritionPer100Grams": {
+      "calories": 42,
+      "proteinGrams": 2.8,
+      "carbohydrateGrams": 7.6,
+      "fatGrams": 0.2,
+      "fiberGrams": 2.6,
+      "sugarGrams": 4,
+      "sodiumMilligrams": 4
+    }
+  },
+  {
+    "ingredient": "garlic",
+    "aliases": ["garlic clove", "garlic cloves"],
+    "gramsPerUnit": { "clove": 3 },
+    "nutritionPer100Grams": {
+      "calories": 149,
+      "proteinGrams": 6.4,
+      "carbohydrateGrams": 33.1,
+      "fatGrams": 0.5,
+      "fiberGrams": 2.1,
+      "sugarGrams": 1,
+      "sodiumMilligrams": 17
+    }
+  },
+  {
+    "ingredient": "ginger",
+    "aliases": ["fresh ginger"],
+    "gramsPerUnit": { "tablespoon": 6 },
+    "nutritionPer100Grams": {
+      "calories": 80,
+      "proteinGrams": 1.8,
+      "carbohydrateGrams": 17.8,
+      "fatGrams": 0.8,
+      "fiberGrams": 2,
+      "sugarGrams": 1.7,
+      "sodiumMilligrams": 13
+    }
+  },
+  {
+    "ingredient": "pasta",
+    "aliases": ["spaghetti", "penne", "noodles"],
+    "gramsPerUnit": {},
+    "nutritionPer100Grams": {
+      "calories": 371,
+      "proteinGrams": 13,
+      "carbohydrateGrams": 75,
+      "fatGrams": 1.5,
+      "fiberGrams": 3.2,
+      "sugarGrams": 2.7,
+      "sodiumMilligrams": 6
+    }
+  },
+  {
+    "ingredient": "tomato",
+    "aliases": ["tomatoes", "canned tomato", "tomato sauce"],
+    "gramsPerUnit": { "cup": 180, "medium": 123 },
+    "nutritionPer100Grams": {
+      "calories": 18,
+      "proteinGrams": 0.9,
+      "carbohydrateGrams": 3.9,
+      "fatGrams": 0.2,
+      "fiberGrams": 1.2,
+      "sugarGrams": 2.6,
+      "sodiumMilligrams": 5
+    }
+  },
+  {
+    "ingredient": "onion",
+    "aliases": ["yellow onion", "red onion", "white onion"],
+    "gramsPerUnit": { "cup": 160, "medium": 110 },
+    "nutritionPer100Grams": {
+      "calories": 40,
+      "proteinGrams": 1.1,
+      "carbohydrateGrams": 9.3,
+      "fatGrams": 0.1,
+      "fiberGrams": 1.7,
+      "sugarGrams": 4.2,
+      "sodiumMilligrams": 4
+    }
+  },
+  {
+    "ingredient": "basil",
+    "gramsPerUnit": { "cup": 24 },
+    "nutritionPer100Grams": {
+      "calories": 23,
+      "proteinGrams": 3.2,
+      "carbohydrateGrams": 2.7,
+      "fatGrams": 0.6,
+      "fiberGrams": 1.6,
+      "sugarGrams": 0.3,
+      "sodiumMilligrams": 4
+    }
+  },
+  {
+    "ingredient": "olive oil",
+    "aliases": ["vegetable oil"],
+    "gramsPerUnit": { "tablespoon": 13.5, "teaspoon": 4.5 },
+    "nutritionPer100Grams": {
+      "calories": 884,
+      "proteinGrams": 0,
+      "carbohydrateGrams": 0,
+      "fatGrams": 100,
+      "fiberGrams": 0,
+      "sugarGrams": 0,
+      "sodiumMilligrams": 0
+    }
+  },
+  {
+    "ingredient": "spinach",
+    "gramsPerUnit": { "cup": 30 },
+    "nutritionPer100Grams": {
+      "calories": 23,
+      "proteinGrams": 2.9,
+      "carbohydrateGrams": 3.6,
+      "fatGrams": 0.4,
+      "fiberGrams": 2.2,
+      "sugarGrams": 0.4,
+      "sodiumMilligrams": 79
+    }
+  },
+  {
+    "ingredient": "cheese",
+    "aliases": ["cheddar", "cheddar cheese", "shredded cheese", "parmesan cheese"],
+    "gramsPerUnit": { "cup": 113, "slice": 21 },
+    "nutritionPer100Grams": {
+      "calories": 403,
+      "proteinGrams": 24.9,
+      "carbohydrateGrams": 1.3,
+      "fatGrams": 33.1,
+      "fiberGrams": 0,
+      "sugarGrams": 0.5,
+      "sodiumMilligrams": 621
+    }
+  },
+  {
+    "ingredient": "butter",
+    "gramsPerUnit": { "tablespoon": 14.2, "teaspoon": 4.7 },
+    "nutritionPer100Grams": {
+      "calories": 717,
+      "proteinGrams": 0.9,
+      "carbohydrateGrams": 0.1,
+      "fatGrams": 81.1,
+      "fiberGrams": 0,
+      "sugarGrams": 0.1,
+      "sodiumMilligrams": 11
+    }
+  },
+  {
+    "ingredient": "black beans",
+    "aliases": ["black bean", "beans", "bean"],
+    "gramsPerUnit": { "cup": 172 },
+    "nutritionPer100Grams": {
+      "calories": 132,
+      "proteinGrams": 8.9,
+      "carbohydrateGrams": 23.7,
+      "fatGrams": 0.5,
+      "fiberGrams": 8.7,
+      "sugarGrams": 0.3,
+      "sodiumMilligrams": 1
+    }
+  },
+  {
+    "ingredient": "corn",
+    "gramsPerUnit": { "cup": 164 },
+    "nutritionPer100Grams": {
+      "calories": 96,
+      "proteinGrams": 3.4,
+      "carbohydrateGrams": 21,
+      "fatGrams": 1.5,
+      "fiberGrams": 2.4,
+      "sugarGrams": 4.5,
+      "sodiumMilligrams": 1
+    }
+  },
+  {
+    "ingredient": "avocado",
+    "gramsPerUnit": { "medium": 150 },
+    "nutritionPer100Grams": {
+      "calories": 160,
+      "proteinGrams": 2,
+      "carbohydrateGrams": 8.5,
+      "fatGrams": 14.7,
+      "fiberGrams": 6.7,
+      "sugarGrams": 0.7,
+      "sodiumMilligrams": 7
+    }
+  },
+  {
+    "ingredient": "salsa",
+    "gramsPerUnit": { "cup": 260 },
+    "nutritionPer100Grams": {
+      "calories": 36,
+      "proteinGrams": 1.5,
+      "carbohydrateGrams": 7,
+      "fatGrams": 0.2,
+      "fiberGrams": 1.5,
+      "sugarGrams": 4,
+      "sodiumMilligrams": 430
+    }
+  },
+  {
+    "ingredient": "lime",
+    "gramsPerUnit": { "piece": 67 },
+    "nutritionPer100Grams": {
+      "calories": 30,
+      "proteinGrams": 0.7,
+      "carbohydrateGrams": 10.5,
+      "fatGrams": 0.2,
+      "fiberGrams": 2.8,
+      "sugarGrams": 1.7,
+      "sodiumMilligrams": 2
+    }
+  },
+  {
+    "ingredient": "tortilla",
+    "aliases": ["corn tortilla", "flour tortilla"],
+    "gramsPerUnit": { "piece": 25 },
+    "nutritionPer100Grams": {
+      "calories": 218,
+      "proteinGrams": 5.7,
+      "carbohydrateGrams": 44.6,
+      "fatGrams": 2.9,
+      "fiberGrams": 6.3,
+      "sugarGrams": 1.2,
+      "sodiumMilligrams": 45
+    }
+  },
+  {
+    "ingredient": "lentil",
+    "aliases": ["lentils", "brown lentil", "green lentil"],
+    "gramsPerUnit": { "cup": 192 },
+    "nutritionPer100Grams": {
+      "calories": 116,
+      "proteinGrams": 9,
+      "carbohydrateGrams": 20.1,
+      "fatGrams": 0.4,
+      "fiberGrams": 7.9,
+      "sugarGrams": 1.8,
+      "sodiumMilligrams": 2
+    }
+  },
+  {
+    "ingredient": "celery",
+    "gramsPerUnit": { "cup": 101 },
+    "nutritionPer100Grams": {
+      "calories": 16,
+      "proteinGrams": 0.7,
+      "carbohydrateGrams": 3,
+      "fatGrams": 0.2,
+      "fiberGrams": 1.6,
+      "sugarGrams": 1.3,
+      "sodiumMilligrams": 80
+    }
+  },
+  {
+    "ingredient": "vegetable broth",
+    "gramsPerUnit": { "cup": 240 },
+    "nutritionPer100Grams": {
+      "calories": 7,
+      "proteinGrams": 0.3,
+      "carbohydrateGrams": 1.4,
+      "fatGrams": 0.1,
+      "fiberGrams": 0,
+      "sugarGrams": 0.8,
+      "sodiumMilligrams": 343
+    }
+  },
+  {
+    "ingredient": "tuna",
+    "aliases": ["canned tuna"],
+    "gramsPerUnit": {},
+    "nutritionPer100Grams": {
+      "calories": 132,
+      "proteinGrams": 28,
+      "carbohydrateGrams": 0,
+      "fatGrams": 1,
+      "fiberGrams": 0,
+      "sugarGrams": 0,
+      "sodiumMilligrams": 247
+    }
+  },
+  {
+    "ingredient": "bread",
+    "aliases": ["sandwich bread", "whole wheat bread", "sourdough"],
+    "gramsPerUnit": { "slice": 28 },
+    "nutritionPer100Grams": {
+      "calories": 247,
+      "proteinGrams": 13,
+      "carbohydrateGrams": 41,
+      "fatGrams": 4.2,
+      "fiberGrams": 7,
+      "sugarGrams": 5,
+      "sodiumMilligrams": 400
+    }
+  },
+  {
+    "ingredient": "mayonnaise",
+    "aliases": ["mayo"],
+    "gramsPerUnit": { "tablespoon": 14 },
+    "nutritionPer100Grams": {
+      "calories": 680,
+      "proteinGrams": 1,
+      "carbohydrateGrams": 0.6,
+      "fatGrams": 75,
+      "fiberGrams": 0,
+      "sugarGrams": 0.6,
+      "sodiumMilligrams": 635
+    }
+  },
+  {
+    "ingredient": "lettuce",
+    "gramsPerUnit": { "cup": 36 },
+    "nutritionPer100Grams": {
+      "calories": 15,
+      "proteinGrams": 1.4,
+      "carbohydrateGrams": 2.9,
+      "fatGrams": 0.2,
+      "fiberGrams": 1.3,
+      "sugarGrams": 0.8,
+      "sodiumMilligrams": 28
+    }
+  },
+  {
+    "ingredient": "potato",
+    "aliases": ["potatoes", "russet potato", "baking potato"],
+    "gramsPerUnit": { "medium": 173 },
+    "nutritionPer100Grams": {
+      "calories": 93,
+      "proteinGrams": 2.5,
+      "carbohydrateGrams": 21.2,
+      "fatGrams": 0.1,
+      "fiberGrams": 2.2,
+      "sugarGrams": 1.2,
+      "sodiumMilligrams": 10
+    }
+  },
+  {
+    "ingredient": "yogurt",
+    "aliases": ["greek yogurt"],
+    "gramsPerUnit": { "cup": 245 },
+    "nutritionPer100Grams": {
+      "calories": 59,
+      "proteinGrams": 10.2,
+      "carbohydrateGrams": 3.6,
+      "fatGrams": 0.4,
+      "fiberGrams": 0,
+      "sugarGrams": 3.2,
+      "sodiumMilligrams": 36
+    }
+  },
+  {
+    "ingredient": "chicken broth",
+    "gramsPerUnit": { "cup": 240 },
+    "nutritionPer100Grams": {
+      "calories": 6,
+      "proteinGrams": 0.6,
+      "carbohydrateGrams": 0.4,
+      "fatGrams": 0.2,
+      "fiberGrams": 0,
+      "sugarGrams": 0.2,
+      "sodiumMilligrams": 310
+    }
+  },
+  {
+    "ingredient": "noodles",
+    "aliases": ["egg noodles"],
+    "gramsPerUnit": {},
+    "nutritionPer100Grams": {
+      "calories": 384,
+      "proteinGrams": 14.2,
+      "carbohydrateGrams": 71.3,
+      "fatGrams": 4.4,
+      "fiberGrams": 3.3,
+      "sugarGrams": 1.9,
+      "sodiumMilligrams": 21
+    }
+  },
+  {
+    "ingredient": "banana",
+    "aliases": ["bananas"],
+    "gramsPerUnit": { "medium": 118 },
+    "nutritionPer100Grams": {
+      "calories": 89,
+      "proteinGrams": 1.1,
+      "carbohydrateGrams": 22.8,
+      "fatGrams": 0.3,
+      "fiberGrams": 2.6,
+      "sugarGrams": 12.2,
+      "sodiumMilligrams": 1
+    }
+  },
+  {
+    "ingredient": "berries",
+    "aliases": ["berry", "blueberries", "strawberries", "blueberry", "strawberry"],
+    "gramsPerUnit": { "cup": 148 },
+    "nutritionPer100Grams": {
+      "calories": 57,
+      "proteinGrams": 0.7,
+      "carbohydrateGrams": 14.5,
+      "fatGrams": 0.3,
+      "fiberGrams": 2.4,
+      "sugarGrams": 10,
+      "sodiumMilligrams": 1
+    }
+  },
+  {
+    "ingredient": "almond milk",
+    "aliases": ["milk"],
+    "gramsPerUnit": { "cup": 240 },
+    "nutritionPer100Grams": {
+      "calories": 15,
+      "proteinGrams": 0.6,
+      "carbohydrateGrams": 0.6,
+      "fatGrams": 1.1,
+      "fiberGrams": 0.2,
+      "sugarGrams": 0.2,
+      "sodiumMilligrams": 63
+    }
+  },
+  {
+    "ingredient": "oats",
+    "aliases": ["oatmeal", "rolled oats"],
+    "gramsPerUnit": { "cup": 80 },
+    "nutritionPer100Grams": {
+      "calories": 389,
+      "proteinGrams": 16.9,
+      "carbohydrateGrams": 66.3,
+      "fatGrams": 6.9,
+      "fiberGrams": 10.6,
+      "sugarGrams": 0.9,
+      "sodiumMilligrams": 2
+    }
+  },
+  {
+    "ingredient": "peanut butter",
+    "gramsPerUnit": { "tablespoon": 16 },
+    "nutritionPer100Grams": {
+      "calories": 588,
+      "proteinGrams": 25.1,
+      "carbohydrateGrams": 20,
+      "fatGrams": 50,
+      "fiberGrams": 6,
+      "sugarGrams": 9.2,
+      "sodiumMilligrams": 17
+    }
+  },
+  {
+    "ingredient": "chia seeds",
+    "gramsPerUnit": { "tablespoon": 12 },
+    "nutritionPer100Grams": {
+      "calories": 486,
+      "proteinGrams": 16.5,
+      "carbohydrateGrams": 42.1,
+      "fatGrams": 30.7,
+      "fiberGrams": 34.4,
+      "sugarGrams": 0,
+      "sodiumMilligrams": 16
+    }
+  }
+]
