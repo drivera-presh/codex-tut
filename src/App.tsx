@@ -3,7 +3,9 @@ import { useMemo, useState } from "react";
 import { IngredientForm } from "./components/IngredientForm";
 import { RecipeCard } from "./components/RecipeCard";
 import { RecipeDetailModal } from "./components/RecipeDetailModal";
-import type { RecipeSearchResponse, SearchResult } from "../shared/types";
+import { getLocalRecipes } from "./data/localRecipes";
+import { searchRecipes } from "../shared/lib/recipeMatching";
+import type { SearchResult } from "../shared/types";
 
 type SearchStatus = "idle" | "loading" | "success" | "error";
 
@@ -38,23 +40,11 @@ export default function App() {
     setMessage("");
 
     try {
-      const response = await fetch("/api/recipes/search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ ingredients })
-      });
-
-      if (!response.ok) {
-        throw new Error("Recipe search failed.");
-      }
-
-      const data = (await response.json()) as RecipeSearchResponse;
-      setResults(data.results);
+      const searchResults = searchRecipes(getLocalRecipes(), ingredients);
+      setResults(searchResults);
       setStatus("success");
       setMessage(
-        data.results.length === 0
+        searchResults.length === 0
           ? "No close matches yet. Try rice, egg, tomato, beans, chicken, pasta, or potato."
           : ""
       );
